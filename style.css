@@ -25,18 +25,16 @@ html {
 
 body {
     background-color: #f2ebe3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .main-container {
-    justify-self: center;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    margin: 10% 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     overflow: hidden;
     background-color: white;
@@ -64,10 +62,10 @@ body {
 }
 
 h1 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
 }
 
 h2, .price {
@@ -91,6 +89,7 @@ p {
     color: #3c8067;
     justify-self: left;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .price span {
@@ -125,12 +124,11 @@ button:hover {
 .attribution { 
     font-size: 11px; 
     text-align: center; 
-    /* position: absolute;
+    position: absolute;
     width: 100%;
     bottom: 1%;
     left: 50%;
     transform: translate(-50%);
-    display: none; */
 }
 
 .attribution a { 
@@ -140,11 +138,9 @@ button:hover {
 @media (min-width: 576px) {
     .main-container {
         flex-direction: row;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         min-height: 400px;
+        max-height: 420px;
+        max-width: 590px;
     }
 
     .hero {
@@ -155,6 +151,33 @@ button:hover {
 
     .inner-container {
         gap: 10px;
-        padding: 25px;
+        padding: 32px;
+    }
+
+    .description {
+        gap: 20px;
+    }
+
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+        position: absolute;
+        width: 100%;
+        bottom: 1%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    @media (max-height: 475px) {
+        .attribution {
+            display: none;
+        }
+    }
+
+    @media (max-height: 420px) {
+        .main-container {
+            top: 0;
+            transform: translate(-50%, 0%);
+        }
     }
 }
